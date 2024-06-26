@@ -24,5 +24,4 @@ public class VendorController {
         return vendorService.createVendor(vendor);
     }
 
-    // Add other endpoints as needed
 }

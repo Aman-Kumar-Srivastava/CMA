@@ -1,0 +1,34 @@
+.vendor-table {
+  width: 80%;
+  margin: 20px 0px 100px 160px;
+  border-collapse: collapse;
+}
+
+.vendor-table-title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.vendor-table th,
+.vendor-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.vendor-table th {
+  background-color: #f2f2f2;
+}
+
+.vendor-table th:first-child,
+.vendor-table td:first-child {
+  text-align: left;
+}
+
+.vendor-table th:last-child,
+.vendor-table td:last-child {
+  text-align: left;
+}
+
+.vendor-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

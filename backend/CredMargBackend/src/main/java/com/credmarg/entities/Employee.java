@@ -1,5 +1,6 @@
 package com.credmarg.entities;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -7,7 +8,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity
 public class Employee {
+    @Id
     private String id;
 
     private String name;
@@ -16,6 +19,7 @@ public class Employee {
 
     private double ctc;
 
+    @Column(unique = true)
     private String email;
 
 }

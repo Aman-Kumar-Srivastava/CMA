@@ -1,0 +1,34 @@
+.email-table {
+    width: 80%;
+    margin: 20px 0px 100px 160px;
+    border-collapse: collapse;
+}
+
+.email-table-title {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.email-table th,
+.email-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.email-table th {
+    background-color: #f2f2f2;
+}
+
+.email-table th:first-child,
+.email-table td:first-child {
+    text-align: left;
+}
+
+.email-table th:last-child,
+.email-table td:last-child {
+    text-align: left;
+}
+
+.email-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

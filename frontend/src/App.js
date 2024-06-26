@@ -12,7 +12,7 @@ const App = () => {
     return (
         <Router>
             <div>
-                <nav>
+                <nav className="navbar">
                     <ul>
                         <li><Link to="/employees">Create Employee</Link></li>
                         <li><Link to="/vendors">Create Vendor</Link></li>

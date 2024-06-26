@@ -1,25 +1,11 @@
 package com.credmarg.services;
 
 import com.credmarg.entities.Employee;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
-@Service
-public class EmployeeService {
+public interface EmployeeService {
+    public List<Employee> getAllEmployees();
 
-    List<Employee> employees = new ArrayList<>();
-    public List<Employee> getAllEmployees() {
-        return employees;
-    }
-
-    public Employee createEmployee(Employee employee) {
-        employee.setId(UUID.randomUUID().toString());
-        employees.add(employee);
-        return employee;
-    }
-
-    // Add other CRUD methods as needed
+    public Employee createEmployee(Employee employee);
 }

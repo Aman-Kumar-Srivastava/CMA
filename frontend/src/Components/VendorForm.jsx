@@ -9,18 +9,27 @@ const VendorForm = () => {
         try {
             const response = await axios.post('http://localhost:8080/vendors', vendor);
             console.log('Vendor created:', response.data);
-            // Optionally, reset form fields or show success message
         } catch (error) {
             console.error('Error creating vendor:', error);
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name" value={vendor.name} onChange={(e) => setVendor({ ...vendor, name: e.target.value })} />
-            <input type="email" placeholder="Email" value={vendor.email} onChange={(e) => setVendor({ ...vendor, email: e.target.value })} />
-            <input type="text" placeholder="UPI" value={vendor.upi} onChange={(e) => setVendor({ ...vendor, upi: e.target.value })} />
-            <button type="submit">Create Vendor</button>
+        <form onSubmit={handleSubmit} className="form-container box" >
+            <div className="form-row text-input">
+                <label className="form-label " htmlFor="name">Name</label>
+                <input className="form-input textfield" type="text" id="name" placeholder="Name" value={vendor.name} onChange={(e) => setVendor({ ...vendor, name: e.target.value })} />
+            </div>
+            <div className="form-row text-input">
+                <label className="form-label" htmlFor="email">Email</label>
+                <input className="form-input textfield" type="email" id="email" placeholder="Email" value={vendor.email} onChange={(e) => setVendor({ ...vendor, email: e.target.value })} />
+            </div>
+            <div className="form-row text-input">
+                <label className="form-label" htmlFor="upi">UPI</label>
+                <input className="form-input textfield" type="text" id="ctc" placeholder="UPI" value={vendor.upi} onChange={(e) => setVendor({ ...vendor, upi: e.target.value })} />
+            </div>
+            <button className="form-button " type="submit">Create Vendor</button>
+
         </form>
     );
 };

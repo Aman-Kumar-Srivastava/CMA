@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './EmailForm.css'
 
 const EmailForm = () => {
     const [vendors, setVendors] = useState([]);
@@ -32,29 +33,28 @@ const EmailForm = () => {
         e.preventDefault();
         try {
             const selectedVendorsData = vendors.filter(vendor => selectedVendors.includes(vendor.id));
-            await axios.post('http://localhost:8080/api/email/sendEmailToVendors', selectedVendorsData, {
+            await axios.post('http://localhost:8080/email/sendEmailToVendors', selectedVendorsData, {
                 params: { templateMessage }
             });
             console.log('Email sent to selected vendors');
-            // Optionally, reset form fields or show success message
         } catch (error) {
             console.error('Error sending email:', error);
         }
     };
 
     return (
-        <div>
+        <div className="email-form-container">
             <form onSubmit={handleSubmit}>
                 <textarea placeholder="Template message" value={templateMessage} onChange={(e) => setTemplateMessage(e.target.value)} />
-                <div>
-                    {vendors.map(vendor => (
+                <div className="checkbox-group">
+                    {vendors.map((vendor) => (
                         <div key={vendor.id}>
                             <input type="checkbox" id={vendor.id} checked={selectedVendors.includes(vendor.id)} onChange={() => handleCheckboxChange(vendor.id)} />
                             <label htmlFor={vendor.id}>{vendor.name}</label>
                         </div>
                     ))}
                 </div>
-                <button type="submit">Send Email</button>
+                <button className='email-send-btn' type="submit">Send Email</button>
             </form>
         </div>
     );

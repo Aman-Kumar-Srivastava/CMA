@@ -1,7 +1,7 @@
 package com.credmarg.controllers;
 
 import com.credmarg.entities.Employee;
-import com.credmarg.services.EmployeeService;
+import com.credmarg.services.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/employees")
 public class EmployeeController {
     @Autowired
-    private EmployeeService employeeService;
+    private EmployeeServiceImpl employeeService;
 
     @GetMapping
     public List<Employee> getAllEmployees() {
@@ -24,5 +24,4 @@ public class EmployeeController {
         return employeeService.createEmployee(employee);
     }
 
-    // Add other endpoints as needed
 }

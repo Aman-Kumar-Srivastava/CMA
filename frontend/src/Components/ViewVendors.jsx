@@ -1,6 +1,6 @@
-// pages/vendors.js - Page to display all vendors
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './ViewVendors.css'
 
 const ViewVendors = () => {
   const [vendors, setVendors] = useState([]);
@@ -12,22 +12,32 @@ const ViewVendors = () => {
       })
       .catch(error => {
         console.error(error);
-        // Handle error
       });
   }, []);
 
   return (
     <div>
-      <h1>All Vendors</h1>
-      {vendors.map((vendor, index) => (
-        <div key={index}>
-          <h3>{vendor.name}</h3>
-          <p>Category: {vendor.category}</p>
-          <p>Location: {vendor.location}</p>
-          <p>Email: {vendor.email}</p>
-        </div>
-      ))}
+      <h1 className="vendor-table-title">All Vendors</h1>
+      <table className="vendor-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>UPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          {vendors.map((vendor, index) => (
+            <tr key={index}>
+              <td>{vendor.name}</td>
+              <td>{vendor.email}</td>
+              <td>{vendor.upi}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+
   );
 };
 

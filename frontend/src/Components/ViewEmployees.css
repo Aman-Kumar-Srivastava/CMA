@@ -1,0 +1,34 @@
+.employee-table {
+    width: 80%;
+    margin: 20px 0px 100px 160px;
+    border-collapse: collapse;
+}
+
+.employee-table-title {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.employee-table th,
+.employee-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.employee-table th {
+    background-color: #f2f2f2;
+}
+
+.employee-table th:first-child,
+.employee-table td:first-child {
+    text-align: left;
+}
+
+.employee-table th:last-child,
+.employee-table td:last-child {
+    text-align: left;
+}
+
+.employee-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
